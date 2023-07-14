@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Tester</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        input[type="password"] {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .result.valid {
+            color: green;
+        }
+
+        .result.invalid {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Password Tester</h1>
+    <input type="password" id="passwordInput" placeholder="Enter your password">
+    <button onclick="testPassword()">Test Password</button>
+    <div class="result" id="resultContainer"></div>
+
+    <script>
+        function testPassword() {
+            var password = document.getElementById("passwordInput").value;
+            var resultContainer = document.getElementById("resultContainer");
+            
+            // Define the rules for a valid password
+            var minLength = 8;
+            var maxLength = 20;
+            var hasUppercase = /[A-Z]/.test(password);
+            var hasLowercase = /[a-z]/.test(password);
+            var hasNumber = /[0-9]/.test(password);
+            var hasSpecialChar = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password);
+
+            // Perform the password validation
+            if (password.length < minLength || password.length > maxLength) {
+                resultContainer.textContent = "Password must be between " + minLength + " and " + maxLength + " characters long.";
+                resultContainer.className = "result invalid";
+            } else if (!hasUppercase) {
+                resultContainer.textContent = "Password must contain at least one uppercase letter.";
+                resultContainer.className = "result invalid";
+            } else if (!hasLowercase) {
+                resultContainer.textContent = "Password must contain at least one lowercase letter.";
+                resultContainer.className = "result invalid";
+            } else if (!hasNumber) {
+                resultContainer.textContent = "Password must contain at least one number.";
+                resultContainer.className = "result invalid";
+            } else if (!hasSpecialChar) {
+                resultContainer.textContent = "Password must contain at least one special character.";
+                resultContainer.className = "result invalid";
+            } else {
+                resultContainer.textContent = "Password is valid!";
+                resultContainer.className = "result valid";
+            }
+        }
+    </script>
+</body>
+</html>
