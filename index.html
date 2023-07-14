@@ -128,7 +128,7 @@
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     alert('Staff application submitted successfully.');
-                    form.reset(); // Reset the form
+                    location.reload(); // Reload the page
                 } else {
                     alert('Staff application submitted successfully.');
                 }
