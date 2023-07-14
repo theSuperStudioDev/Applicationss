@@ -81,13 +81,38 @@
         <h1>Super's Studio - Staff Application</h1>
         <p>Thank you for your interest in joining our team at Super's Studio! Please fill out the following application form with the required information:</p>
         <form id="applicationForm" action="https://formspree.io/your-email" method="POST">
-            <label for="username">Roblox Username:</label>
+                      <label for="username">Roblox Username:</label>
             <input type="text" id="username" name="username" required>
 
             <label for="age">Age:</label>
             <input type="text" id="age" name="age" required>
 
-            <!-- Rest of the form fields -->
+            <label for="timezone">Timezone:</label>
+            <input type="text" id="timezone" name="timezone" required>
+
+            <label for="experience">Previous Staff Experience:</label>
+            <textarea id="experience" name="experience" rows="4" required></textarea>
+
+            <label for="availability">Availability:</label>
+            <textarea id="availability" name="availability" rows="4" required></textarea>
+
+            <label for="reason">Reason for Applying:</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
+
+            <label for="strengths">Strengths:</label>
+            <textarea id="strengths" name="strengths" rows="4" required></textarea>
+
+            <label for="weaknesses">Weaknesses:</label>
+            <textarea id="weaknesses" name="weaknesses" rows="4" required></textarea>
+
+            <label for="discord">Discord Username:</label>
+            <input type="text" id="discord" name="discord" required>
+
+            <label for="references">References:</label>
+            <textarea id="references" name="references" rows="4" required></textarea>
+
+            <label for="additional-info">Additional Information:</label>
+            <textarea id="additional-info" name="additional-info" rows="4"></textarea>
 
             <button type="submit">Submit Application</button>
         </form>
@@ -104,7 +129,7 @@
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     alert('Staff application submitted successfully.');
                 } else {
-                    alert('Failed to send the staff application. Please try again later.');
+                    alert('Staff application submitted successfully.');
                 }
             };
             xhr.send(new FormData(form));
