@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         try {
-            const response = await fetch('https://formspree.io/f/xnqkjezq', {
+            const response = await fetch('https://formspree.io/f/mgejebnj', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
